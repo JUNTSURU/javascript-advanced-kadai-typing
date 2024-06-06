@@ -126,7 +126,15 @@ const timer = () => {
 
     // カウントが0になったらタイマーを停止する
     if(time <= 0) {
-      gameOver(id);
+      
+      typedfield.textContent = ''; 
+
+      
+      untypedfield.textContent = 'タイムアップ!';
+      setTimeout(() => {
+        gameOver(id);
+      
+      },10);
     }
   }, 1000);
 };
@@ -148,5 +156,3 @@ start.addEventListener('click', () => {
 });
 
 untypedfield.textContent = 'スタートボタンで開始';
-
-
